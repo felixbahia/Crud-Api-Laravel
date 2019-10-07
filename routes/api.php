@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+//use Illuminate\Routing\Route;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,10 +15,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+  //  return $request->user();
+//});
 
-Route::get('/ok', function(){
-    return ['status' => true];
+
+Route::namespace('API')->group(function(){
+    Route::get('/cliente', 'ClienteController@index')->name('api.cliente');
+    Route::get('/cliente/{id}', 'ClienteController@show')->name('api.show');
+    Route::post('/cliente', 'ClienteController@store')->name('api.store');
+    Route::put('/cliente/{id}', 'ClienteController@update')->name('api.update');
+    Route::delete('/cliente/{id}', 'ClienteController@delete')->name('api.delete');
 });
