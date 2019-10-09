@@ -21,9 +21,9 @@ use Illuminate\Http\Request;
 
 
 Route::namespace('API')->group(function(){
-    Route::get('/cliente', 'ClienteController@index')->name('api.cliente');
-    Route::get('/cliente/{id}', 'ClienteController@show')->name('api.show');
-    Route::post('/cliente', 'ClienteController@store')->name('api.store');
-    Route::put('/cliente/{id}', 'ClienteController@update')->name('api.update');
-    Route::delete('/cliente/{id}', 'ClienteController@delete')->name('api.delete');
+    Route::get('/crud', 'CrudController@index')->name('api.crud');
+    Route::get('/crud/{id}', 'CrudController@show')->name('api.show');
+    Route::post('/crud', 'CrudController@store')->name('api.store');
+    Route::put('/crud/{id}', 'CrudController@update')->name('api.update');
+    Route::delete('/crud/{id}', 'CrudController@delete')->name('api.delete');
 });

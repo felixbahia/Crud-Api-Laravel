@@ -32,10 +32,18 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/clientes', 'ClientesController@index')->name('clientes');
-Route::get('/clientes/novo', 'ClientesController@novo')->name('novo');
-Route::get('/clientes/{cliente}/editar', 'ClientesController@editar')->name('editar');
-Route::post('/clientes/salvar', 'ClientesController@salvar')->name('salvar');
-Route::post('/clientes/atualizar/{id}', 'ClientesController@atualizar')->name('atualizar');
-Route::post('/clientes/{cliente}', 'ClientesController@deletar')->name('deletar');
+Route::get('/', 'HomeController@index')->name('clientes');
+Route::get('/cruds', 'CrudController@index')->name('cruds');
+Route::get('/cruds/novo', 'CrudController@novo')->name('novo');
+Route::get('/cruds/{id}/editar', 'CrudController@editar')->name('editar');
+Route::post('/cruds/salvar', 'CrudController@salvar')->name('salvar');
+Route::post('/cruds/atualizar/{id}', 'CrudController@atualizar')->name('atualizar');
+Route::post('/cruds/{id}', 'CrudController@deletar')->name('deletar');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
