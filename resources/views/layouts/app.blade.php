@@ -25,7 +25,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                  {{ config('app.name', 'Laravel') }}
-                    CRUD Básico
+                    CRUD Básico 
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                        @if(Auth::user())
-                        <li><a class="navbar-brand" href="{{url('/clientes')}}">Clientes</a> </li>
+                        <li><a class="float-left" href="{{url('/cruds')}}">Listar Carros</a> </li>
                         @endif
                     </ul>
 
@@ -48,7 +48,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Cadastre-se') }}</a>
                                 </li>
                             @endif
                         @else

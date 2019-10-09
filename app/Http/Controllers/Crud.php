@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
+use App\Crud;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Symfony\Component\HttpKernel\Client;
 
 class Contatos extends Controller
 {
 
     /**
-     * Exibe todos os clientes cadastrados
+     * Exibe todos os carros cadastrados
      *
      * @return Response
      */
     public function index(){
-        return Cliente::all();
+        return Crud::all();
     }
 
 }
